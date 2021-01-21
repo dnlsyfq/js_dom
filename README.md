@@ -1,4 +1,6 @@
 ### Interactive pages with JS
+https://caniuse.com/
+https://developer.mozilla.org/en-US/docs/Web/API/Document
 
 1. Select element on page
 2. Manipulating elements
@@ -89,4 +91,109 @@ for(let i=0; i < els.length; i++){
     for(let i=0; i < errorNotPurple.length; i++){
         errorNotPurple[i].style.color='red';
     }
+```
+### document.querySelector() , document.querySelectorAll()
+
+* tag
+* id , # 
+* class , .
+* etc ,
+    * html attributes , <p title="label"></p>
+    ```
+        <p title="label"></p>
+        document.querySelector('[title=label]')
+    ```
+    * css selector , even | odd
+    ```
+      <ul>
+        <li></li>
+        <li></li>
+      <ul>
+  
+    const evens = document.querySelectorAll('li:nth-child(even)');
+    for(let i=0; i < evens.length; i++){
+      evens[i].style.backgroundColor='baige';
+    }
+  
+    ```
+
+* document.querySelector('')
+    * match first matching
+
+* document.querySelectorAll('')
+    * html collections
+    
+  
+### Element.textContent, Element.innerHTML
+
+* Element.textContent
+  * read
+  * set 
+  
+```
+    <p class="description">Things that are purple:</p>
+    <input type="text" class="description"></br></br>
+    <button class="description">Change Text</button>
+    
+    const input = document.querySelector('input.description');
+    const p = document.querySelector('p.description');
+    const button = document.querySelector('button.description');
+
+    button.addEventListener('click',()=>{
+    p.textContent = input.value + ": ";
+})
+
+```
+
+
+
+* Element.innerHTML
+
+```
+    <p class="description">Things that are purple:</p>
+    <input type="text" class="description"></br></br>
+    <button class="description">Change Text</button>
+    
+    const input = document.querySelector('input.description');
+    const p = document.querySelector('p.description');
+    const button = document.querySelector('button.description');
+
+    button.addEventListener('click',()=>{
+    p.innerHTML = input.value + ": ";
+})
+
+```
+
+### Change Element Attributes
+
+HTMLElement.type
+HTMLElement.className
+
+```
+  const p = document.querySelector('p');
+  p.title="description"
+```
+
+### Change Element Style
+
+
+HTMLElement.style.backgroundColor
+HTMLElement.style.color
+
+```
+    <button id="toggleList">Hide List</button>
+
+    <div class="list">
+    </div>
+    
+    toggleList.addEventListener('click',()=>{
+    if(listDiv.style.display=="none"){
+        listDiv.style.display="block";
+        toggleList.textContent="Hide List";
+    } else {
+        listDiv.style.display="none";
+        toggleList.textContent="Show List";
+    }
+})
+    
 ```

@@ -8,18 +8,27 @@
 <body>
     <h1 id="myHeading">JavaScript and the DOM</h1>
     <p>Making a web page interactive</p>
-    <input type="text" id="myTextInput"></br></br>
-    <button id="myButton">Change Headline Color</button>
+    <button id="toggleList">Hide List</button>
 
-    <ul>
-        <li>grapes</li>
-        <li class="error-not-purple">oranges</li>
-        <li>amethyst</li>
-        <li>lavender</li>
-        <li class="error-not-purple">fire trucks</li>
-        <li class="error-not-purple">snow</li>
-        <li>plums</li>
-    </ul>
+    <div class="list">
+        <p title="label">Things that are purple:</p>
+        <input type="text" id="myTextInput"></br></br>
+        <button id="myButton">Change Headline Color</button>
+
+        <p class="description">Things that are purple:</p>
+        <input type="text" class="description"></br></br>
+        <button class="description">Change Text</button>
+
+        <ul>
+            <li>grapes</li>
+            <li class="error-not-purple">oranges</li>
+            <li>amethyst</li>
+            <li>lavender</li>
+            <li class="error-not-purple">fire trucks</li>
+            <li class="error-not-purple">snow</li>
+            <li>plums</li>
+        </ul>
+    </div>
 <!--    <button onclick="myheadingColor()">Heading Button</button>-->
 <!--    <button onClick="changeColor()">Buttocks</button>-->
 <!--    <script src="js/main.js"></script>-->
