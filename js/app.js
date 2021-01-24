@@ -6,6 +6,10 @@ const myTextInput = document.getElementById('myTextInput');
 const toggleList = document.getElementById("toggleList");
 const listDiv = document.querySelector('div.list');
 
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+const removeItemButton = document.querySelector('button.removeItemButton');
+
 toggleList.addEventListener('click',()=>{
     if(listDiv.style.display=="none"){
         listDiv.style.display="block";
@@ -15,6 +19,34 @@ toggleList.addEventListener('click',()=>{
         toggleList.textContent="Show List";
     }
 })
+
+addItemButton.addEventListener('click',()=>{
+    let li = document.createElement('li');
+    li.textContent = addItemInput.value;
+
+    let ul = document.querySelector('ul');
+    ul.appendChild(li);
+
+    addItemInput.value='';
+})
+
+removeItemButton.addEventListener('click',() => {
+    let length = document.querySelectorAll('li').length;
+    let lastLi = document.querySelectorAll('li')[length-1];
+    let ul = document.querySelector('ul');
+    ul.removeChild(lastLi);
+
+    // alternative
+
+    // let ul = document.getElementsByTagName('ul');
+    // let li = document.querySelector('li:last-child');
+    // ul.removeChild(li);
+
+
+
+})
+
+
 
 // method 1
 
@@ -76,6 +108,7 @@ const button = document.querySelector('button.description');
 
 button.addEventListener('click',()=>{
     p.innerHTML= input.value + ": ";
+    input.value = '';
 })
 
 p.title="List Description";

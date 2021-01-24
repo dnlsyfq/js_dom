@@ -197,3 +197,96 @@ HTMLElement.style.color
 })
     
 ```
+
+### Create Element Style
+
+HTML.createElement('htmltag')
+
+```
+document.createElement('div')
+```
+
+```
+<input type="text" class="addItemInput"></br></br>
+<button class="addItemButton">Add Item</button>
+
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+
+addItemButton.addEventListener('click',()=>{
+    let li = document.createElement('li');
+    li.textContent = addItemInput.value;
+})
+```
+
+### Node Append Child
+* nodes belong to the DOM
+
+```
+Node.appendChild()
+```
+```
+        <ul>
+            <li>grapes</li>
+            <li class="error-not-purple">oranges</li>
+            <li>amethyst</li>
+            <li>lavender</li>
+            <li class="error-not-purple">fire trucks</li>
+            <li class="error-not-purple">snow</li>
+            <li>plums</li>
+        </ul>
+        
+<input type="text" class="addItemInput"></br></br>
+<button class="addItemButton">Add Item</button>
+        
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+
+addItemButton.addEventListener('click',()=>{
+    let li = document.createElement('li');
+    li.textContent = addItemInput.value;
+
+    let ul = document.querySelector('ul');
+    ul.appendChild(li);
+})
+```
+
+### Node Remove Child
+
+```
+Node.removeChild()
+```
+
+```
+<button class="removeItemButton">Remove Last Item</button>
+
+
+const removeItemButton = document.querySelector('button.removeItemButton');
+
+removeItemButton.addEventListener('click',() => {
+    let length = document.querySelectorAll('li').length;
+    let lastLi = document.querySelectorAll('li')[length-1];
+    let ul = document.querySelector('ul');
+    ul.removeChild(lastLi);
+
+```
+
+# User Interaction Event 
+
+## Interactive site 
+* Selecting elements on the page
+* Manipulating elements
+* Listening for user actions
+
+### window.setTimeout()
+
+```
+window.setTimeout(
+    (something)=>{
+        console.log(something)
+    },3000,'Greeting'
+)
+```
+
+### EventTarget.addEventListener()
+
