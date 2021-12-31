@@ -92,6 +92,16 @@ for(let i=0; i < els.length; i++){
         errorNotPurple[i].style.color='red';
     }
 ```
+
+* bootstrap class
+```
+document.getElementsByClassName('container')
+
+
+```
+
+
+
 ### document.querySelector() , document.querySelectorAll()
 
 * tag
