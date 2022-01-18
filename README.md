@@ -17,6 +17,110 @@ window.document.<...>
 ### Document
 
 ```
+document.body.innerHTML = 'The cat loves the dog.';
+document.body.innerHTML = '<h2>This is a heading</h2>'; 
+```
+
+* to access a specific element with CSS selectors
+* Selectors can include the name of the tag, a class, or an ID
+```
+document.querySelector('p'); // returns the first element that matches that selector
+document.getElementById('bio').innerHTML // to access elements directly by their id
+```
+
+* style an element
+* element.style.property format, with the property representing a CSS property.
+```
+let blueElement = document.querySelector('.blue');
+blueElement.style.backgroundColor = 'blue';
+
+document.querySelector('.blue').style.fontFamily = 'Roboto';
+
+document.body.style.backgroundColor= '#201F2E';
+```
+
+* Create and Insert Elements
+* The .createElement(tagName) method creates a new element based on the specified tag name passed into it as an argument. However, it does not append it to the document. It creates an empty element with no inner HTML.
+```
+
+```
+* assign it to be the child of an element that already exists on the DOM
+* .appendChild() method will add a child element as the last child node.
+```
+let paragraph = document.createElement('p');
+ 
+paragraph.id = 'info'; 
+ 
+paragraph.innerHTML = 'The text inside the paragraph';
+ 
+document.body.appendChild(paragraph);
+```
+
+```
+let newDestination = document.createElement('li');
+
+newDestination.id = 'oaxaca';
+
+newDestination.innerHTML = 'Oaxaca, Mexico';
+
+document.getElementById('more-destinations').appendChild(newDestination);
+```
+
+* Remove an element
+* .removeChild() method removes a specified child from a parent.
+```
+let paragraph = document.querySelector('p');
+document.body.removeChild(paragraph);
+
+
+```
+
+
+```
+let trip = document.getElementById('oaxaca');
+document.getElementById('more-destinations').removeChild(trip);
+```
+
+* hide element
+```
+document.getElementById('sign').hidden = true;
+```
+
+* interactivity on click
+* The .onclick property allows you to assign a function to run on a click event on an element:
+```
+let element = document.getElementById('interact');
+element.onclick = function() { element.style.backgroundColor = 'blue' };
+```
+
+```
+let element = document.querySelector("button");
+
+function turnButtonRed (){
+  element.style.backgroundColor = 'red';
+  element.style.color = 'white';
+  element.innerHTML = 'Red Button'
+}
+
+element.onclick = turnButtonRed;
+```
+
+### Traversing the DOM
+A parent node is the closest connected node to another node in the direction towards the root.
+
+A child node is the closest connected node to another node in the direction away from the root.
+
+* Each DOM element node has a .parentNode and .children property. The property will return a list of the element’s children and return null if the element has no children.
+
+* The .firstChild property will grant access to the first child of that parent element.
+```
+let first = document.body.firstChild;
+first.innerHTML = 'I am the child!';
+
+first.parentNode.innerHTML = 'I am the parent and my inner HTML has been replaced!'
+```
+
+```
 
 # index.html
 <h1 id="myHeading">JavaScript and the DOM</h1>
