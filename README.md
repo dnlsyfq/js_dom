@@ -21,6 +21,15 @@ document.body.innerHTML = 'The cat loves the dog.';
 document.body.innerHTML = '<h2>This is a heading</h2>'; 
 ```
 
+```
+var i=0;
+while (i<=10) {
+    // document.write(i + "<br />");
+    document.write(`${i} </br>`)
+    i++;
+}
+```
+
 * to access a specific element with CSS selectors
 * Selectors can include the name of the tag, a class, or an ID
 ```
