@@ -14,13 +14,169 @@ window.alert('txt')
 window.location.href
 window.document.<...>
 
-### Document
+## Document
+All HTML elements are objects. And as we know every object has properties and methods.
 
 ```
 document.body.innerHTML = 'The cat loves the dog.';
 document.body.innerHTML = '<h2>This is a heading</h2>'; 
+document.getElementsByClassName("") // returns a collection of all elements in the document with the specified class name.
+document.getElementsByTagName("") // returns all of the elements of the specified tag name as an array.
 ```
 
+Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
+
+```
+element.childNodes returns an array of an element's child nodes.
+element.firstChild returns the first child node of an element.
+element.lastChild returns the last child node of an element.
+element.hasChildNodes returns true if an element has any child nodes, otherwise false.
+element.nextSibling returns the next node at the same tree level.
+element.previousSibling returns the previous node at the same tree level.
+element.parentNode returns the parent node of an element.
+
+```
+
+change the text content of an element using the innerHTML property.
+```
+function setText() {
+    var a = document.getElementById("demo");
+     var arr = a.childNodes;
+     for(var x=0;x<arr.length;x++) {
+       arr[x].innerHTML = "new text";
+     }
+}
+
+//calling the function with setTimeout to make sure the HTML is loaded
+setTimeout(setText, 500);
+```
+
+## Changing Attributes
+
+
+Once you have selected the element(s) you want to work with, you can change their attributes.
+
+```
+<img id="myimg" src="orange.png" alt="" />
+<script>
+var el = document.getElementById("myimg");
+el.src = "apple.png";
+</script>
+```
+
+## Changing Style
+
+
+The style of HTML elements can also be changed using JavaScript.
+All style attributes can be accessed using the style object of the element.
+```
+	<body>
+		<div id="demo" style="width:200px">some text</div>
+	</body>
+    
+    window.onload = function() {
+    var x = document.getElementById("demo");
+    x.style.color = '#6600FF';
+    x.style.width = '100px';
+};
+```
+
+## Creating Elements
+
+Use the following methods to create new nodes:
+```
+element.cloneNode() clones an element and returns the resulting node.
+document.createElement(element) creates a new element node.
+document.createTextNode(text) creates a new text node.
+```
+This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
+```
+var node = document.createTextNode("Some new text");
+```
+```
+```
+element.appendChild(newNode) // adds a new child node to an element as the last child node.
+element.insertBefore(node1, node2) // inserts node1 as a child before node2.
+---
+
+```
+window.onload = function() {
+    //creating a new paragraph
+    var p = document.createElement("p");
+    var node = document.createTextNode("Some new text");
+    //adding the text to the paragraph
+    p.appendChild(node);
+
+    var div = document.getElementById("demo");
+    //adding the paragraph to the div
+    div.appendChild(p);
+};
+```
+
+```
+var el = document.createElement("li");
+
+
+var txt = document.createTextNode("B");
+
+
+el.appendChild(txt);
+
+
+var ul = document.getElementById("list");
+
+
+ul.appendChild(el);
+```
+
+## Removing Elements
+
+
+To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
+```
+	<body>
+		<div id="demo">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+	</body>
+    
+        window.onload = function() {
+        
+        // method 1
+        var parent = document.getElementById("demo");
+        var child = document.getElementById("p1");
+        parent.removeChild(child);
+        
+        // method 2
+        var child = document.getElementById("p1");
+        child.parentNode.removeChild(child);
+    };
+```
+
+## Replacing Elements
+
+
+To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
+```
+		<div id="demo">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+        
+        window.onload = function() {
+            var p = document.createElement("p");
+            var node = document.createTextNode("This is new");
+            p.appendChild(node);
+
+            var parent = document.getElementById("demo");
+            var child = document.getElementById("p1");
+            parent.replaceChild(p, child);
+        };
+```
+
+
+---
 ```
 var i=0;
 while (i<=10) {
