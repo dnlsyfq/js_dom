@@ -175,7 +175,124 @@ To replace an HTML element, the element.replaceChild(newNode, oldNode) method is
         };
 ```
 
+## Animations
+clearInterval() method to stop the timer.
+```
+var t = setInterval(move, 10);
 
+function move() {
+  if(pos >= 150) {
+    clearInterval(t);
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}
+```
+
+```
+	<body>
+		<div id="container">
+            <div id="box"> </div>
+        </div>
+	</body>
+	
+window.onload = function() {
+     var pos = 0; 
+    //our box element
+    var box = document.getElementById('box');
+    var t = setInterval(move, 10);
+  
+    function move() {
+        if(pos >= 150) {
+            clearInterval(t);
+        }
+        else {
+            pos += 1;
+            box.style.left = pos+'px';
+        }
+    }
+};
+```
+---
+
+## Events
+
+```
+<p onclick="someFunc()">some text</p>
+```
+```
+	<body>
+		<button id="demo">Click Me</button>
+	</body>
+	
+window.onload = function() {
+    var x = document.getElementById('demo');
+    x.onclick = function () {
+        document.body.innerHTML = Date();
+    }
+};
+	
+```
+* The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.
+
+```
+<body onload="doSomething()">
+
+window.onload = function() {
+   //some code
+}
+```
+* The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.
+
+```
+	<body>
+		<input type="text" id="name" onchange="change()">
+	</body>
+	
+function change() {
+    var x = document.getElementById('name');
+    x.value = x.value.toUpperCase();
+}
+```
+
+## Event Listener
+
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
+```
+element.addEventListener(event, function, useCapture);
+
+element.addEventListener("click", myFunction);
+element.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  alert("Hello World!");
+}
+```
+
+## Event Propagation
+There are two ways of event propagation in the HTML DOM: bubbling and capturing.
+
+Event propagation allows for the definition of the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+	> In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <p> element's click event is handled first, followed by the <div> element's click even
+	
+	> In capturing, the outermost element's event is handled first and then the inner. The <div> element's click event is handled first, followed by the <p> element's click event.
+	
+	
+	Capturing goes down the DOM.
+Bubbling goes up the DOM.
+	
+	```
+	addEventListener(event, function, useCapture)
+	
+	//Capturing propagation
+elem1.addEventListener("click", myFunction, true); 
+
+//Bubbling propagation
+elem2.addEventListener("click", myFunction, false);
+	```
 ---
 ```
 var i=0;
