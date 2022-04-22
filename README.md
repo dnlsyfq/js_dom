@@ -12,16 +12,26 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document
 
 window.alert('txt')
 window.location.href
+window.innerWidth
 window.document.<...>
 
 ## Document
 All HTML elements are objects. And as we know every object has properties and methods.
 
 ```
+document.body
+document.title
+document.URL
+```
+
+```
 document.body.innerHTML = 'The cat loves the dog.';
 document.body.innerHTML = '<h2>This is a heading</h2>'; 
 document.getElementsByClassName("") // returns a collection of all elements in the document with the specified class name.
-document.getElementsByTagName("") // returns all of the elements of the specified tag name as an array.
+document.getElementsByTagName("HTML TAG") // returns all of the elements of the specified tag name as an array.
+document.querySelector(".main-nav a") // match first element
+document.querySelectorAll(".post-content p") // match all element
+
 ```
 
 Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
