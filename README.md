@@ -6,6 +6,30 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document
 2. Manipulating elements
 3. Listening for actions 
 
+### script attribute
+
+* defer
+should be executed after the HTML file is completely parsed. When the HTML parser encounters a <script> element with the defer attribute, it loads the script but defers the actual execution of the JavaScript until after it finishes parsing the rest of the elements in the HTML file.
+
+When a script contains functionality that requires interaction with the DOM, the defer attribute is the way to go. This way, it ensures that the entire HTML file has been parsed before the script is executed.
+
+to make it the last script that is downloaded and executed.
+```
+
+<script src="" defer></script>
+
+
+```
+
+* async
+loads and executes the script asynchronously with the rest of the webpage. This means that, similar to the defer attribute, the HTML parser will continue parsing the rest of the HTML as the script is downloaded in the background. However, with the async attribute, the script will not wait until the entire page is parsed: it will execute immediately after it has been downloaded
+
+useful for scripts that are independent of other scripts in order to function accordingly. Thus, if it does not matter exactly at which point the script file is executed, asynchronous loading is the most suitable option as it optimizes web page load time.
+```
+<script src="" async></script>
+```
+
+
 ### Browser Global Environment
 * window object , global scope
 * Window Properties
