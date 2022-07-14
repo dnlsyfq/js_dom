@@ -51,6 +51,7 @@ document.URL
 ```
 document.body.innerHTML = 'The cat loves the dog.';
 document.body.innerHTML = '<h2>This is a heading</h2>'; 
+document.body.innerHTML = "<h1>Gritty " + date + "</h1>"
 document.getElementsByClassName("") // returns a collection of all elements in the document with the specified class name.
 document.getElementsByTagName("HTML TAG") // returns all of the elements of the specified tag name as an array.
 document.querySelector(".main-nav a") // match first element
