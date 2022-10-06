@@ -50,10 +50,14 @@ window.document.<...>
 All HTML elements are objects. And as we know every object has properties and methods.
 
 ```
+document.head
 document.body
 document.title
 document.URL
 ```
+	
+### select and modify
+CSS selectors define the elements to which a set of CSS rules apply, but we can also use these same selectors to access DOM elements with JavaScript! Selectors can include a tag name, a class, or an ID.	
 
 ```
 document.body.innerHTML = 'The cat loves the dog.';
@@ -63,7 +67,18 @@ document.getElementsByClassName("") // returns a collection of all elements in t
 document.getElementsByTagName("HTML TAG") // returns all of the elements of the specified tag name as an array.
 document.querySelector(".main-nav a") // match first element
 document.querySelectorAll(".post-content p") // match all element
-
+document.querySelector('p');
+// Set first element of .student class as 'Not yet registered'
+document.getElementsByClassName('student')[0].innerHTML = 'Not yet registered';
+ 
+// Set second <li> tag as 'Cedric Diggory'
+document.getElementsByTagName('li')[1].innerHTML = 'Cedric Diggory`;
+	
+	
+document.querySelector('h1').innerHTML = 'Most popular Harry Potter characters'
+document.getElementById('fourth').innerHTML = 'Professor Snape'
+document.getElementsByClassName('slytherin')[0].innerHTML = 'Salazar Slytherin'
+document.getElementsByTagName('li')[0].innerHTML = 'Dobby'	
 ```
 
 Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
@@ -76,6 +91,13 @@ element.hasChildNodes returns true if an element has any child nodes, otherwise 
 element.nextSibling returns the next node at the same tree level.
 element.previousSibling returns the previous node at the same tree level.
 element.parentNode returns the parent node of an element.
+	
+	
+let blueElement = document.querySelector('.blue');
+blueElement.style.backgroundColor = 'blue';
+	
+
+document.querySelector('.blue').style.fontFamily = 'Roboto';	
 
 ```
 
