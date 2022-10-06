@@ -6,14 +6,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document
 2. Manipulating elements
 3. Listening for actions 
 
+> When the HTML parser encounters a <script> element, it loads the script then executes its contents before parsing the rest of the HTML. 
+
 ### script attribute
 
 * defer
+The defer attribute specifies scripts should be executed after the HTML file is completely parsed. it loads the script but defers the actual execution of the JavaScript until after it finishes parsing the rest of the elements in the HTML file.  
+
+
 should be executed after the HTML file is completely parsed. When the HTML parser encounters a <script> element with the defer attribute, it loads the script but defers the actual execution of the JavaScript until after it finishes parsing the rest of the elements in the HTML file.
 
 When a script contains functionality that requires interaction with the DOM, the defer attribute is the way to go. This way, it ensures that the entire HTML file has been parsed before the script is executed.
 
 to make it the last script that is downloaded and executed.
+
+ensures that the entire HTML file has been parsed before the script is executed.
 ```
 
 <script src="" defer></script>
