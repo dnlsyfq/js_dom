@@ -91,6 +91,7 @@ element.hasChildNodes returns true if an element has any child nodes, otherwise 
 element.nextSibling returns the next node at the same tree level.
 element.previousSibling returns the previous node at the same tree level.
 element.parentNode returns the parent node of an element.
+element.children	
 	
 	
 let blueElement = document.querySelector('.blue');
@@ -99,6 +100,10 @@ blueElement.style.backgroundColor = 'blue';
 
 document.querySelector('.blue').style.fontFamily = 'Roboto';	
 
+let first = document.body.firstChild
+first.innerHTML = 'BROWN BEARS ARE AWESOME!'
+
+first.parentNode.style.backgroundColor = 'beige';	
 ```
 
 change the text content of an element using the innerHTML property.
@@ -152,10 +157,26 @@ Use the following methods to create new nodes:
 element.cloneNode() clones an element and returns the resulting node.
 document.createElement(element) creates a new element node.
 document.createTextNode(text) creates a new text node.
+	
+
+let paragraph = document.createElement('p');
+paragraph.id = 'info'; 
+paragraph.innerHTML = 'The text inside the paragraph';
+document.body.appendChild(paragraph);	
 ```
+	
 This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
 ```
 var node = document.createTextNode("Some new text");
+	
+
+let newAttraction = document.createElement('li');
+
+newAttraction.id = 'vespa';
+newAttraction.innerHTML = 'Rent a Vespa';
+
+document.getElementById('italy-attractions').appendChild(newAttraction);	
+	
 ```
 ```
 ```
@@ -218,6 +239,43 @@ To remove an HTML element, you must select the parent of the element and use the
     };
 ```
 
+```
+let paragraph = document.querySelector('p');
+document.body.removeChild(paragraph);	
+	
+	
+	
+let elementToRemove = document.getElementById('vespa')
+document.getElementById('italy-attractions').removeChild(elementToRemove)	
+```	
+	
+```
+document.getElementById('sign').hidden = true;	
+```	
+	
+
+## Click interactivity
+ add interactivity to DOM elements by assigning a function to run based on an event. Events can include anything from a click to a user mousing over an elemen
+	
+```
+// method 1
+let element = document.querySelector('button');
+ 
+element.onclick = function() { 
+  element.style.backgroundColor = 'blue' 
+};
+	
+// method 2
+let element = document.querySelector('button');
+ 
+function turnBlue() {
+   element.style.backgroundColor = 'blue';
+}
+ 
+element.onclick = turnBlue;	
+	
+```	
+	
 ## Replacing Elements
 
 
