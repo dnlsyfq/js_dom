@@ -185,6 +185,14 @@ element.insertBefore(node1, node2) // inserts node1 as a child before node2.
 ---
 
 ```
+let node = document.createElement('li');
+let text = document.createTextNode('earth');
+node.appendChild(text);
+document.getElementById('list').appendChild(node);
+```
+
+
+```
 window.onload = function() {
     //creating a new paragraph
     var p = document.createElement("p");
