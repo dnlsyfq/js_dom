@@ -260,7 +260,40 @@ document.getElementById('italy-attractions').removeChild(elementToRemove)
 ```
 document.getElementById('sign').hidden = true;	
 ```	
-	
+### Event Listener
+
+```
+let eventTarget = document.getElementById('targetElement');
+ 
+// method 1 
+eventTarget.addEventListener('click', function() {
+  // this block of code will run when click event happens on eventTarget element
+});
+
+// method 2
+
+function eventHandlerFunction() {
+  // this block of code will run when click event happens
+}
+ 
+eventTarget.addEventListener('click', eventHandlerFunction);
+```
+
+### remove event 
+```
+eventTarget.removeEventListener('click', eventHandlerFunction);
+```
+
+### event object
+```
+There are pre-determined properties associated with event objects. You can call these properties to see information about the event, for example:
+
+the .target property to reference the element that the event is registered to.
+the .type property to access the name of the event.
+the .timeStamp property to access the number of milliseconds that passed since the document loaded and the event was triggered.
+```
+
+
 
 ## Click interactivity
  add interactivity to DOM elements by assigning a function to run based on an event. Events can include anything from a click to a user mousing over an elemen
