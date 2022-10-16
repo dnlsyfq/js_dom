@@ -922,3 +922,15 @@ function showItem(){
 
 itemFour.addEventListener('mousedown',showItem)
 ```
+
+### keyboard events 
+
+```
+keydown event is fired while a user presses a key down
+keyup event is fired while a user releases a key.
+keypress event is fired when a user presses a key down and releases it. 
+
+Keyboard events have unique properties assigned to their event objects like the .key property that stores the values of the key pressed by the user.
+
+
+```
