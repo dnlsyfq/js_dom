@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<!--    <h1>Lets start with Hierarchy</h1>-->
+<!--    <p>Did you know what the default width of an input box is ... 20 characters</p>-->
+
+<!--    <form>-->
+<!--        First Name: <br>-->
+<!--        <input type="text">-->
+<!--        <br>-->
+<!--    </form>-->
+
+<!--    <form>-->
+<!--        <input type="checkbox" name="happy" value="happy" checked>I am Happy<br>-->
+<!--        <input type="checkbox" name="sad" value="sad" checked>I am Sad<br>-->
+<!--        <input type="submit" value="submit">-->
+<!--    </form>-->
+    <p class="hello" id="hello">Hello World!</p>
+</body>
+    <script>
+        let paragraph = document.getElementById("hello");
+        let paragraph_ = document.getElementsByClassName("hello");
+        console.log(paragraph);
+        console.log(paragraph.textContent);
+        console.log(paragraph_);
+        console.log(paragraph_[0]);
+
+
+
+    </script>
+</html>
