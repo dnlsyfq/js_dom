@@ -51,6 +51,8 @@ All HTML elements are objects. And as we know every object has properties and me
 
 ```
 document.write(<var>)
+document.write(`${<var>} </br>`)
+
 document.head
 document.body
 document.title
