@@ -50,6 +50,7 @@ window.document.<...>
 All HTML elements are objects. And as we know every object has properties and methods.
 
 ```
+document.write(<var>)
 document.head
 document.body
 document.title
