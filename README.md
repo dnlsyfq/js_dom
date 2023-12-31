@@ -63,6 +63,16 @@ document.createElement('ul').innerHTML = '<value>'
 ```
 
 ```
+var paragraphs = document.getElementsByTagName("p");
+for(var i = 0; i < paragraphs.length; i++){
+	var paragraph = paragraphs.item(i);
+	paragraph.style.setProperty('color','white',null);
+}
+
+d3.selectAll('p').style('color','white');
+```
+
+```
     var arr1 = ['a','b','c'];
     var unorderedList = document.createElement('ul');
     unorderedList.style.cssText = "background:tomato; width: 
