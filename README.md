@@ -52,7 +52,9 @@ All HTML elements are objects. And as we know every object has properties and me
 ```
 document.write(<var>)
 document.write(`${<var>} </br>`)
-
+// innerHTML replace content 
+document.querySelector(<html tag>).innerHTML = ``
+document.body.innerHTML = `<h1>The message to shout is: ${shout.toUpperCase()}</h1>`
 document.head
 document.body
 document.title
