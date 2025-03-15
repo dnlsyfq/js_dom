@@ -1,3 +1,20 @@
+### DOM
+global environment
+```
+alert(' ')
+window.alert(' ')
+location.href
+window.location.href
+window.document
+document
+document.title
+document.body
+document.body.style.backgroundColor = ''
+document.body.innerHTML = '<h1> </h1>'
+
+```
+
+
 ### Interactive pages with JS
 https://caniuse.com/
 https://developer.mozilla.org/en-US/docs/Web/API/Document
