@@ -14,6 +14,11 @@ document.body.innerHTML = '<h1> </h1>'
 
 ```
 
+### Event Listener
+```
+const body = document.body;
+body.addEventListener('click', () => { body.innerHTML = '<H1> </H1>' });
+```
 
 ### Interactive pages with JS
 https://caniuse.com/
