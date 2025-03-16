@@ -20,6 +20,149 @@ const body = document.body;
 body.addEventListener('click', () => { body.innerHTML = '<H1> </H1>' });
 ```
 
+### Select Elements
+```
+//finds element by id
+document.getElementById(id)
+
+//finds elements by class name
+document.getElementsByClassName(name)
+
+//finds elements by tag name
+document.getElementsByTagName(name)
+
+var elem = document.getElementById("demo");
+elem.innerHTML = "Hello World!";
+
+var arr = document.getElementsByClassName("demo");
+//accessing the second element
+arr[1].innerHTML = "Hi";
+
+<p>hi</p>
+<p>hello</p>
+<p>hi</p>
+<script>
+var arr = document.getElementsByTagName("p");
+for (var x = 0; x < arr.length; x++) {
+  arr[x].innerHTML = "Hi there";
+}
+</script>
+
+```
+### Select Elements childNodes
+
+```
+<html>
+    <body>
+         <div id ="demo">
+            <p>some text</p>
+            <p>some other text</p>
+        </div>
+    </body>
+</html>
+```
+
+```
+function setText() {
+    var a = document.getElementById("demo");
+     var arr = a.childNodes;
+     for(var x=0;x<arr.length;x++) {
+       arr[x].innerHTML = "new text";
+     }
+}
+
+//calling the function with setTimeout to make sure the HTML is loaded
+setTimeout(setText, 500);
+```
+
+```
+element.childNodes returns an array of an element's child nodes.
+
+element.firstChild returns the first child node of an element.
+
+element.lastChild returns the last child node of an element.
+
+element.hasChildNodes returns true if an element has any child nodes, otherwise false.
+
+element.nextSibling returns the next node at the same tree level.
+
+element.previousSibling returns the previous node at the same tree level.
+
+element.parentNode returns the parent node of an element.
+
+
+
+```
+
+### Changing and Manupulating Elements
+we can change the text content of an element using the innerHTML property.
+Similarly, we can change the attributes of elements.
+
+```
+<img id="myimg" src="orange.png" alt="" />
+<script>
+var el = document.getElementById("myimg");
+el.src = "apple.png";
+</script>
+```
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<a href="http://www.example.com">Some link</a>
+	</body>
+</html>
+```
+
+```
+//calling the function in window.onload to make sure the HTML is loaded
+window.onload = function() {
+    var el = document.getElementsByTagName('a');
+    el[0].href= 'http://www.sololearn.com';
+};
+```
+```
+var arr = document.
+    getElementsByTagName("
+img
+");
+for(var x=0; x<arr.
+length
+; x++) {
+  arr[x].
+src
+ = "demo.jpg";
+}
+
+```
+
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<div id="demo" style="width:200px">some text</div>
+	</body>
+</html>
+```
+
+```
+//calling the function in window.onload to make sure the HTML is loaded
+window.onload = function() {
+    var x = document.getElementById("demo");
+    x.style.color = '#6600FF';
+    x.style.width = '100px';
+};
+```
+
+
 ### Interactive pages with JS
 https://caniuse.com/
 https://developer.mozilla.org/en-US/docs/Web/API/Document
