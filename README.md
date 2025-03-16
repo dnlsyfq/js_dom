@@ -162,6 +162,38 @@ window.onload = function() {
 };
 ```
 
+```
+<body>
+    <section class="container">
+        <img src="normal.jpg" id="myImage">
+        <p onclick="blooming()">Codecademy</p>
+    </section>
+    <script>
+        function blooming(){
+            var image = document.getElementById('myImage');
+            if(image.src.match('normal')){
+                image.src="bloom.jpg";
+            } else {
+                image.src="normal.jpg";
+            }
+        }
+    </script>
+</body>
+```
+
+```
+  <body onclick="newStyle();">
+    
+    <p class="centered" id="logo">Codecademy</p>
+
+    <script>
+	
+    </script>
+ </body>
+
+```
+
+
 
 ### Interactive pages with JS
 https://caniuse.com/
