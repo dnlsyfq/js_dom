@@ -249,6 +249,95 @@ useful for scripts that are independent of other scripts in order to function ac
 <script src="" async></script>
 ```
 
+### Animations
+
+```
+setInterval(func,10000) // 10 sec
+```
+
+```
+var t = setInterval(move, 10)
+
+function move() {
+  if(pos >= 150) {
+    [b]clearInterval(t);[/b]
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}
+```
+
+
+
+```
+// allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).
+var t = setInterval(move, 500);
+
+// starting position
+var pos = 0; 
+//our box element
+var box = document.getElementById("box");
+
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixels
+}
+```
+---
+
+### Project Animations
+When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<style>
+			#container {
+			    width: 200px;
+			    height: 200px;
+			    background: green;
+			    position: relative;
+			}
+			#box {
+			    width: 50px;
+			    height: 50px;
+			    background: red;
+			    position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+                <div id="box"> </div>
+        </div>
+	<script>
+	//calling the function in window.onload to make sure the HTML is loaded
+		window.onload = function() {
+		     var pos = 0; 
+		    //our box element
+		    var box = document.getElementById('box');
+		    var t = setInterval(move, 10);
+		  
+		    function move() {
+		        if(pos >= 150) {
+		            clearInterval(t);
+		        }
+		        else {
+		            pos += 1;
+		            box.style.left = pos+'px';
+		        }
+		    }
+		};
+        </script>
+	</body>
+</html>
+
+
+
+```
 
 ### Browser Global Environment
 * window object , global scope
