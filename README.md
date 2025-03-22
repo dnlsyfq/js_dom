@@ -398,7 +398,19 @@ document.body.innerHTML = 'The cat loves the dog.';
 document.body.innerHTML = '<h2>This is a heading</h2>'; 
 document.body.innerHTML = "<h1>Gritty " + date + "</h1>"
 document.getElementsByClassName("") // returns a collection of all elements in the document with the specified class name.
-document.getElementsByTagName("HTML TAG") // returns all of the elements of the specified tag name as an array.
+document.getElementsByTagName("li") // returns all of the elements of the specified tag name as an array.
+document.getElementsByTagName("li").length
+document.getElementsByTagName("h1").style.color = 'yellow'
+document.getElementsByTagName("li").style.backgroundColor = 'skyblue';
+
+const items = document.getElementsByTagName('li');
+
+for(let i = 0; i < items.length; i++){
+  items[i].style.backgroundColor="yellow";
+}
+
+
+
 document.querySelector(".main-nav a") // match first element
 document.querySelectorAll(".post-content p") // match all element
 document.querySelector('p');
