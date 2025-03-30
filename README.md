@@ -48,6 +48,16 @@ for (var x = 0; x < arr.length; x++) {
 }
 </script>
 
+// css selectors , ID, class, tag names
+document.querySelector()
+document.querySelector(".btn-toggle")
+document.querySelector("#headline")
+
+document.querySelectorAll('li') // return NodeList not HTMLCollection
+
+NodeList - static data structure
+HTMLCollection - live data structure
+
 ```
 ### Select Elements childNodes
 
