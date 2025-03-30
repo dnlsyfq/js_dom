@@ -58,6 +58,10 @@ document.querySelectorAll('li') // return NodeList not HTMLCollection
 NodeList - static data structure
 HTMLCollection - live data structure
 
+
+// select the first element in the DOM with an HTML title attribute set to "Page Title"
+document.querySelector('[title='Page Title']');
+
 ```
 ### Select Elements childNodes
 
