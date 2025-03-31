@@ -62,6 +62,16 @@ HTMLCollection - live data structure
 // select the first element in the DOM with an HTML title attribute set to "Page Title"
 document.querySelector('[title='Page Title']');
 
+// select all <a> elements inside the <nav> element and assign them to the variable navigationLinks
+
+let navigationLinks;
+navigationLinks = document.querySelectorAll("nav a");
+
+//  select all <a> elements inside the unordered list with the ID gallery
+
+let galleryLinks;
+galleryLinks = document.querySelectorAll("#gallery a");
+
 ```
 ### Select Elements childNodes
 
