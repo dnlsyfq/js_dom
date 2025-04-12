@@ -11,8 +11,52 @@ document.title
 document.body
 document.body.style.backgroundColor = ''
 document.body.innerHTML = '<h1> </h1>'
+document.getElementById('bio').innerHTML = ''
+document.getElementsByClassName('student')[0].innerHTML='';
+document.getElementsByTagName('li')[0].innerHTML = '';
 
 ```
+
+### Style an Element
+```
+let blueElement = document.querySelector('.blue');
+blueElement.style.backgroundColor = 'blue';
+
+or
+
+document.querySelector('.blue').style.fontFamily = 'Roboto';
+
+```
+
+### Parent and Child Node
+```
+<ul id='groceries'>
+  <li id='must-have'>Toilet Paper</li>
+  <li>Apples</li>
+  <li>Chocolate</li>
+  <li>Dumplings</li>
+</ul>
+
+let parentElement = document.getElementById('must-have').parentNode;
+// returns <ul> element
+let childElements = document.getElementById('groceries').children;
+// returns an array of <li> elements
+```
+
+```
+let first = document.querySelector('body').children[0]
+first.innerHTML = 'BROWN BEARS ARE AWESOME!';
+
+let first = document.querySelector('body').children[0]
+first.innerHTML = 'BROWN BEARS ARE AWESOME!';
+
+first.parentNode.style.backgroundColor = 'beige';
+
+
+
+```
+
+
 
 ### Event Listener
 ```
@@ -117,6 +161,85 @@ element.parentNode returns the parent node of an element.
 
 
 ```
+
+### Create Element
+
+```
+
+let paragraph = document.createElement('p');
+paragraph.id = 'info';
+paragraph.innerHTML = 'The text inside the paragraph';
+document.body.appendChild(paragraph);
+
+or
+
+let newAttraction = document.createElement('li');
+newAttraction.id = 'vespa';
+newAttraction.innerHTML = 'Rent a Vespa';
+document.querySelector('#italy-attractions').append(newAttraction);
+```
+
+
+```
+let node = document.createElement('li');
+let text = document.createTextNode('earth');
+node.appendChild(text);
+document.getElementById('list').appendChild(node);
+```
+
+
+### Hide Element
+```
+document.getElementById('sign').hidden = true;
+
+```
+
+### Remove Element
+```
+let paragraph = document.querySelector('p');
+document.body.removeChild(paragraph);
+
+
+or
+
+
+let elementToRemove = document.getElementById('vespa');
+document.getElementById('italy-attractions').removeChild(elementToRemove);
+```
+
+### Event
+```
+let element = document.querySelector('button');
+
+element.onclick = function() { 
+  element.style.backgroundColor = 'blue' 
+};
+
+or
+
+let element = document.querySelector('button');
+
+function turnBlue() {
+   element.style.backgroundColor = 'blue';
+}
+
+element.onclick = turnBlue;
+
+or
+
+let element = document.querySelector('button');
+
+function turnButtonRed(){
+  // Add code to turn button red
+  element.style.backgroundColor='red'
+  element.style.color = 'white'
+  element.innerHTML = 'Red Button';
+}
+
+element.onclick = turnButtonRed;
+
+```
+
 
 ### Changing and Manupulating Elements
 we can change the text content of an element using the innerHTML property.
