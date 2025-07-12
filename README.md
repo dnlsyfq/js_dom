@@ -1425,3 +1425,70 @@ keypress event is fired when a user presses a key down and releases it.
 
 Keyboard events have unique properties assigned to their event objects like the .key property that stores the values of the key pressed by the user.
 ```
+
+### Handling events
+
+* HTML 
+```
+<body>
+	<button onclick="show()">Click Me</button>
+</body>
+```
+
+* JS
+```
+function show(){
+	alert('Hi')
+}
+```
+
+### onchange
+
+```
+	<body>
+		<input type="text" id="name" onchange="change()">
+	</body>
+
+	<script>
+		function change() {
+		    var x = document.getElementById('name');
+		    x.value = x.value.toUpperCase();
+		}
+	</script>
+
+```
+
+### event listener
+
+```
+element.addEventListener("click", myFunction);
+element.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  alert("Hello World!");
+}
+
+```
+
+```
+element.removeEventListener("mouseover", myFunction);
+```
+
+example
+```
+<body>
+	<button id='demo'>Start</button>
+</body>
+
+window.onload = function(){
+	var btn = document.getElementById('demo');
+	btn.addEventListener('click',myFunction);
+
+	function myFunction(){
+		alert(Math.random())
+		btn.removeEventListener('click',myFunction)
+	}
+}
+```
+
+
