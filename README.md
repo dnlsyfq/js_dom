@@ -1502,4 +1502,34 @@ window.onload = function(){
 }
 ```
 
+### Changing Attributes
 
+```
+<img id="myimg" src="orange.png" alt="" />
+
+<script>
+	var el = document.getElementById('myimg');
+	el.src = "_.png">
+</script>
+
+```
+
+```
+<a id="image" href="https://www.google.com">Google</a>
+
+// change via assign to var
+var a = document.getElementById('image');
+a.href = 'https://www.bing.com';
+
+// change via window.onload 
+window.onload = function(){
+  var el = document.getElementsByTagName('a');
+  el[0].href = "https://www.yahoo.com"
+};
+```
+
+### Changing Style
+
+```
+
+```
