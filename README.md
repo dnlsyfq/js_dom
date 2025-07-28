@@ -1566,3 +1566,46 @@ window.onload = function(){
 ```
 
 ```
+
+### Remove
+
+```
+    <div id="newDemo">
+      <p id="p1">Remove this</p>
+    </div>
+```
+
+```
+// window.onload = function(){
+//   var parent = document.getElementById('newDemo')
+//   var child = document.getElementById('p1')
+//   parent.removeChild(child)
+// }
+```
+
+```
+var child = document.getElementById('p1')
+child.parentNode.removeChild(child)
+```
+
+### Replace Child
+To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
+
+```
+<div id="demo">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+</div>
+```
+
+```
+window.onload = function(){
+  var p = document.createElement('p')
+  var text = document.createTextNode('This new paragraph')
+  p.appendChild(text)
+  
+  var parent = document.getElementById('newnewdemo')
+  var p_old = document.getElementById('p2')
+  parent.replaceChild(p,p_old) 
+}
+```
