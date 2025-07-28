@@ -1609,3 +1609,23 @@ window.onload = function(){
   parent.replaceChild(p,p_old) 
 }
 ```
+### Animations
+var t = setInterval(move, 500);
+
+setInterval(func, 10000); // 10 seconds 
+```
+// starting position
+var pos = 0; 
+//our box element
+var box = document.getElementById("box");
+
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixels
+}
+
+
+var t = setInterval(move, 500);
+
+
+```
