@@ -198,6 +198,39 @@ node.appendChild(text);
 document.getElementById('list').appendChild(node);
 ```
 
+This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
+
+element.appendChild(newNode) adds a new child node to an element as the last child node.
+
+element.insertBefore(node1, node2) inserts node1 as a child before node2.
+
+```
+element.cloneNode() clones an element and returns the resulting node.
+
+document.createElement(element) creates a new element node. 
+
+document.createTextNode(text) creates a new text node.
+
+var node = document.createTextNode("Some new text");
+```
+
+
+```
+window.onload = function(){
+  var p = document.createElement('p');
+  var t = document.createTextNode('some new text');
+  p.appendChild(t);
+  document.getElementById('demo').appendChild(p);
+}
+```
+
+### Removing Element
+
+
+
+
+
+
 
 ### Hide Element
 ```
