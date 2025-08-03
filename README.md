@@ -1629,3 +1629,230 @@ var t = setInterval(move, 500);
 
 
 ```
+
+
+### Animations
+
+```
+#container {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+}
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+}
+
+var t = setInterval(move, 500);
+
+// starting position
+var pos = 0; 
+//our box element
+var box = document.getElementById("box");
+
+// method 1
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixels
+}
+
+// method 2
+function move() {
+  if(pos >= 150) {
+    [b]clearInterval(t);[/b]
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<div id="container">
+            <div id="box"> </div>
+        </div>
+	</body>
+</html>
+
+
+```
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<div id="container">
+            <div id="box"> </div>
+        </div>
+	</body>
+</html>
+
+#container {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+}
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+}
+
+
+//calling the function in window.onload to make sure the HTML is loaded
+window.onload = function() {
+    var pos = 0; 
+    var box = document.getElementById('box');
+    var t = setInterval(move, 10);
+  
+    function move() {
+        if(pos >= 150) {
+            clearInterval(t);
+        }
+        else {
+            pos += 1;
+            box.style.left = pos+'px';
+        }
+    }
+};
+```
+
+### Handling Events
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<button onclick="show();">Click Me</button>
+	</body>
+</html>
+
+function show() {
+    alert("Hi there");
+}
+```
+The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded. 
+
+```
+<body onload="doSomething()">
+
+
+window.onload= function() {
+   //some code
+}
+```
+
+The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<input type="text" id="name" onchange="change()">
+	</body>
+</html>
+
+
+function change() {
+    var x = document.getElementById('name');
+    x.value = x.value.toUpperCase();
+}
+```
+
+## Event Listeners
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
+
+You can also add many event handlers of the same type to one element, i.e., two "click" events.
+```
+element.addEventListener(event, function, useCapture);
+```
+
+The first parameter is the event's type (like "click" or "mousedown").
+
+The second parameter is the function we want to call when the event occurs.
+
+The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.
+
+
+```
+element.addEventListener("click", myFunction);
+element.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  alert("Hello World!");
+}
+
+element.removeEventListener("mouseover", myFunction);
+
+
+```
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		  <button id="demo">Start</button>
+	</body>
+</html>
+
+//calling the function in window.onload to make sure the HTML is loaded
+window.onload = function() {
+    var btn = document.getElementById("demo");
+    btn.addEventListener("click", myFunction);
+
+    function myFunction() {
+        alert(Math.random());
+        btn.removeEventListener("click", myFunction);
+    }
+};
+```
+
+### Event Propagation
+
+There are two ways of event propagation in the HTML DOM: bubbling and capturing.
+
+Event propagation allows for the definition of the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <p> element's click event is handled first, followed by the <div> element's click event.
+
+In capturing, the outermost element's event is handled first and then the inner. The <div> element's click event is handled first, followed by the <p> element's click event.
+
+Capturing goes down the DOM.
+
+Bubbling goes up the DOM
+
+```
+The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.
+
+addEventListener(event, function, useCapture)
+
+//Capturing propagation
+elem1.addEventListener("click", myFunction, true); 
+
+//Bubbling propagation
+elem2.addEventListener("click", myFunction, false);
+```
+
+The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.
