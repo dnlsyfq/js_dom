@@ -1856,3 +1856,97 @@ elem2.addEventListener("click", myFunction, false);
 ```
 
 The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.
+
+
+### Image Slider
+
+```
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+        <div>
+            <button onclick="prev()"> Prev </button>
+            <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px"/>
+            <button onclick="next()"> Next </button>
+        </div>
+	</body>
+</html>
+```
+
+```
+button {
+    margin-top:30px;
+    float:left;
+    height:50px;
+}
+img {
+    float:left;
+    margin-right:10px;
+    margin-left:10px;
+}
+```
+
+```
+var images = [
+    'http://www.sololearn.com/uploads/slider/1.jpg', 
+    'http://www.sololearn.com/uploads/slider/2.jpg', 
+    'http://www.sololearn.com/uploads/slider/3.jpg'
+];
+var num = 0;
+function next() {
+    var slider = document.getElementById('slider');
+    num++;
+    if(num >= images.length) {
+        num = 0;
+    }
+    slider.src = images[num];
+}
+function prev() {
+    var slider = document.getElementById('slider');
+    num--;
+    if(num < 0) {
+        num = images.length-1;
+    }
+    slider.src = images[num];
+}
+```
+
+---
+
+
+```
+<p id='txt' onclick='test();'>20</p>
+<script>
+function test() {
+  var x=document.getElementById('txt');
+  var n = x.innerHTML;
+  x.innerHTML = n/2;
+}
+</script>
+```
+
+### Javascript Form
+
+```
+<form onsubmit="return validate()" method="post">
+    Number: <input type="text" name="num1" id="num1" /><br />
+    Repeat: <input type="text" name="num2" id="num2" /><br />
+    <input type="submit" value="Submit" />
+</form>
+```
+
+```
+function validate() {
+    var n1 = document.getElementById('num1');
+    var n2 = document.getElementById('num2');
+    if(n1.value != '' && n2.value != '') {
+        if(n1.value == n2.value) {
+            return true;
+        }
+    }
+    alert("The values should be equal and not blank");
+    return false;
+}
+```
